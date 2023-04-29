@@ -1,5 +1,6 @@
 from random import randint
-    
+from time import sleep
+
 
 def ones():
     score = []
@@ -8,6 +9,7 @@ def ones():
     if userInput == "r":
 
         # Initial roll
+        spinner(rounds=1)
         rolled = [(randint(1,6)), (randint(1,6)), (randint(1,6)), (randint(1,6)), (randint(1,6))]
         print(rolled)
         collectables = [num1 for num1 in str(rolled) if "1" in num1]
@@ -22,6 +24,7 @@ def ones():
             if userInput == "r":
                 # Second roll
                 if len(score) == 0:
+                    spinner(rounds=1)
                     rolled = [(randint(1,6)), (randint(1,6)), (randint(1,6)), (randint(1,6)), (randint(1,6))]
                     print("Rolled: ", rolled)
                     collectables = [num1 for num1 in str(rolled) if "1" in num1]
@@ -31,6 +34,7 @@ def ones():
                     print("Score: ", score)
             
                 elif len(score) == 1:
+                    spinner(rounds=1)
                     rolled = [(randint(1,6)), (randint(1,6)), (randint(1,6)), (randint(1,6))]
                     print("Rolled: ", rolled)
                     collectables = [num1 for num1 in str(rolled) if "1" in num1]
@@ -40,6 +44,7 @@ def ones():
                     print("Score: ", score)
 
                 elif len(score) == 2:
+                    spinner(rounds=1)
                     rolled = [(randint(1,6)), (randint(1,6)), (randint(1,6))]
                     print("Rolled: ", rolled)
                     collectables = [num1 for num1 in str(rolled) if "1" in num1]
@@ -49,6 +54,7 @@ def ones():
                     print("Score: ", score)
 
                 elif len(score) == 3:
+                    spinner(rounds=1)
                     rolled = [(randint(1,6)), (randint(1,6))]
                     print("Rolled: ", rolled)
                     collectables = [num1 for num1 in str(rolled) if "1" in num1]
@@ -58,6 +64,7 @@ def ones():
                     print("Score: ", score)
 
                 elif len(score) == 4:
+                    spinner(rounds=1)
                     rolled = [(randint(1,6))]
                     print("Rolled: ", rolled)
                     collectables = [num1 for num1 in str(rolled) if "1" in num1]
@@ -76,6 +83,7 @@ def ones():
                 if userInput == "r":
                 # Third roll
                     if len(score) == 0:
+                        spinner(rounds=1)
                         rolled = [(randint(1,6)), (randint(1,6)), (randint(1,6)), (randint(1,6)), (randint(1,6))]
                         print("Rolled: ", rolled)
                         collectables = [num1 for num1 in str(rolled) if "1" in num1]
@@ -85,6 +93,7 @@ def ones():
                         print("Score: ", score)
             
                     elif len(score) == 1:
+                        spinner(rounds=1)
                         rolled = [(randint(1,6)), (randint(1,6)), (randint(1,6)), (randint(1,6))]
                         print("Rolled: ", rolled)
                         collectables = [num1 for num1 in str(rolled) if "1" in num1]
@@ -94,6 +103,7 @@ def ones():
                         print("Score: ", score)
 
                     elif len(score) == 2:
+                        spinner(rounds=1)
                         rolled = [(randint(1,6)), (randint(1,6)), (randint(1,6))]
                         print("Rolled: ", rolled)
                         collectables = [num1 for num1 in str(rolled) if "1" in num1]
@@ -103,6 +113,7 @@ def ones():
                         print("Score: ", score)
 
                     elif len(score) == 3:
+                        spinner(rounds=1)
                         rolled = [(randint(1,6)), (randint(1,6))]
                         print("Rolled: ", rolled)
                         collectables = [num1 for num1 in str(rolled) if "1" in num1]
@@ -112,6 +123,7 @@ def ones():
                         print("Score: ", score)
 
                     elif len(score) == 4:
+                        spinner(rounds=1)
                         rolled = [(randint(1,6))]
                         print("Rolled: ", rolled)
                         collectables = [num1 for num1 in str(rolled) if "1" in num1]
@@ -135,6 +147,21 @@ def ones():
     else:
         print("Please press \"r\" \"e\" or \"q\"")
         ones()
+
+
+# TODO: change this to use it from dice
+def spinner(rounds):
+    if rounds == 1:
+        for x in range(1):
+                for frame in r"-\|/-\|/":
+                    print("\b", frame, sep="", end="\r", flush=True)
+                    sleep(0.2)
+
+    elif rounds == 3:
+        for x in range(3):
+                for frame in r"-\|/-\|/":
+                    print("\b", frame, sep="", end="\r", flush=True)
+                    sleep(0.2)
 
 
 ones()
