@@ -44,7 +44,7 @@ logging.basicConfig(format='%(asctime)s %(message)s', datefmt='%d/%m/%Y %I:%M:%S
 def oneDice():
     userAction = input("\n" + "Roll the dice by pressing \"r\" and \"ENTER\", go back to selection by pressing \"b\" or quit by pressing \"q\" and \"ENTER\": ")
     
-    if userAction == "r" or "R":
+    if userAction == "r":
         logging.info("Rolling dice")
         num = (randint(1,6))
         if num == 1:
@@ -71,11 +71,11 @@ def oneDice():
         logging.info("Dice rolled: ""%s" % (num))
         oneDice()
 
-    elif userAction == "b" or "B":
+    elif userAction == "b":
         logging.info("Back to selection")
         selection()    
 
-    elif userAction == "q" or "Q":
+    elif userAction == "q":
         print("\n" + "Thanks for using DICE!")
         spinner(rounds=3)
         print("END")
@@ -90,7 +90,7 @@ def oneDice():
 def twoDice():
     userInput = input("\n" + "Roll the dice by pressing \"r\" and \"ENTER\", go back to selection by pressing \"b\" or quit by pressing \"q\" and \"ENTER\": ")
 
-    if userInput == "r" or "R":
+    if userInput == "r":
         logging.info("Rolling dice")
         num1 = (randint(1,6))
         num2 = (randint(1,6))
@@ -137,11 +137,11 @@ def twoDice():
         logging.info("Dice rolled: ""%s - %s" % (num1, num2))
         twoDice()
 
-    elif userInput == "b" or "B":
+    elif userInput == "b":
         logging.info("Back to selection")
         selection()    
 
-    elif userInput == "q" or "Q":
+    elif userInput == "q":
         print("\n" + "Thanks for using DICE!")
         spinner(rounds=3)
         print("END")
